@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       Order.hasOne(models.Shipping)
       Order.hasOne(models.State)
       Order.hasOne(models.Payment)
-      Order.hasMany(models.OrderDetails)
+      Order.hasMany(models.OrderDetails, {foreignKey: 'orders_id'})
     }
   };
   Order.init({
