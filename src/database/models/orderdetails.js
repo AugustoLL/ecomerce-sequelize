@@ -15,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   OrderDetails.init({
+    orderDetails_id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     quantity: DataTypes.DECIMAL,
     subtotal: DataTypes.DECIMAL
   }, {

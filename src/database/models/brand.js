@@ -15,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Brand.init({
+    brands_id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     name: DataTypes.STRING
   }, {
     sequelize,

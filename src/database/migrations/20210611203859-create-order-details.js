@@ -14,7 +14,7 @@ module.exports = {
       subtotal: {
         type: Sequelize.DECIMAL
       },
-      product_id: {
+      products_id: {
         type: Sequelize.INTEGER,
         references: {
           model: 'products',

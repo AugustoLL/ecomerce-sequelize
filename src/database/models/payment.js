@@ -15,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Payment.init({
+    payment_id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     type: DataTypes.STRING
   }, {
     sequelize,

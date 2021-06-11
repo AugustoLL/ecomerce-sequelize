@@ -15,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   State.init({
+    states_id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     description: DataTypes.STRING
   }, {
     sequelize,

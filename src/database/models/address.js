@@ -15,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Address.init({
+    address_id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     street: DataTypes.STRING,
     number: DataTypes.INTEGER
   }, {

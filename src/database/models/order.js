@@ -18,6 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Order.init({
+    orders_id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     number: DataTypes.INTEGER,
     date: DataTypes.DATE,
     total: DataTypes.DECIMAL,
