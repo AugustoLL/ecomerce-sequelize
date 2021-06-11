@@ -56,6 +56,8 @@ sequelize model:generate --name Order --attributes number:integer,date:date,tota
 ```
 sequelize model:generate --name UserHasRole --attributes users_id:integer,roles_id:integer
 ```
-
+```
+sequelize model:generate --name Shipping --attributes street:string,number:integer,delivered_date:date
+```
 ## Project Status
 The project is still under development.

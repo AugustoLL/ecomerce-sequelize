@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Order.hasOne(models.Shipping)
+      Order.hasOne(models.State)
+      Order.hasOne(models.Payment)
+      Order.hasMany(models.OrderDetails)
     }
   };
   Order.init({
