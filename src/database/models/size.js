@@ -15,12 +15,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Size.init({
-    sizes_id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER
-    },
     name: DataTypes.STRING
   }, {
     sequelize,

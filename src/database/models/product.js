@@ -16,12 +16,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Product.init({
-    products_id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER
-    },
     name: DataTypes.STRING,
     price: DataTypes.DECIMAL,
     stock: DataTypes.INTEGER,
@@ -30,7 +24,6 @@ module.exports = (sequelize, DataTypes) => {
     brands_id: DataTypes.INTEGER
   }, {
     sequelize,
-    tableName: 'products',
     modelName: 'Product',
   });
   return Product;

@@ -1,55 +1,52 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Products', {
+    await queryInterface.createTable('Orders', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
+      number: {
+        type: Sequelize.INTEGER
       },
-      price: {
+      date: {
+        type: Sequelize.DATE
+      },
+      total: {
         type: Sequelize.DECIMAL
       },
-      stock: {
+      payments_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'payments',
+          key: 'id'
+        }
+      },
+      shipping_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'shippings',
+          key: 'id'
+        }
+      },
+      users_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
+      states_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'states',
+          key: 'id'
+        }
+      },
+      users_addresses: {
         type: Sequelize.INTEGER
-      },
-      stock_min: {
-        type: Sequelize.INTEGER
-      },
-      stock_max: {
-        type: Sequelize.INTEGER
-      },
-      brands_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'brands',
-          key: 'id'
-        }
-      },
-      categories_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'categories',
-          key: 'id'
-        }
-      },
-      sizes_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'sizes',
-          key: 'id'
-        }
-      },
-      genders_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'genders',
-          key: 'id'
-        }
       },
       createdAt: {
         allowNull: false,
@@ -62,6 +59,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Products');
+    await queryInterface.dropTable('Orders');
   }
 };

@@ -1,58 +1,58 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Orders', {
+    await queryInterface.createTable('Products', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      number: {
-        type: Sequelize.INTEGER
+      name: {
+        type: Sequelize.STRING
       },
-      date: {
-        type: Sequelize.DATE
-      },
-      total: {
+      price: {
         type: Sequelize.DECIMAL
       },
-      payments_id: {
+      stock: {
         type: Sequelize.INTEGER
       },
-      payments_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'payments',
-          key: 'id'
-        }
-      },
-      shipping_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'shippings',
-          key: 'id'
-        }
-      },
-      users_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'users',
-          key: 'id'
-        }
-      },
-      states_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'states',
-          key: 'id'
-        }
-      },
-      users_addresses: {
+      stock_min: {
         type: Sequelize.INTEGER
       },
-      states_id: {
+      stock_max: {
         type: Sequelize.INTEGER
+      },
+      brands_id: {
+        type: Sequelize.INTEGER
+      },
+      brands_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'brands',
+          key: 'id'
+        }
+      },
+      categories_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'categories',
+          key: 'id'
+        }
+      },
+      sizes_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'sizes',
+          key: 'id'
+        }
+      },
+      genders_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'genders',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -65,6 +65,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Orders');
+    await queryInterface.dropTable('Products');
   }
 };

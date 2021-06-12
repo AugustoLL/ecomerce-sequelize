@@ -15,18 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Image.init({
-    images_id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER
-    },
     name: DataTypes.STRING,
     url: DataTypes.STRING,
     description: DataTypes.STRING
   }, {
     sequelize,
-    tableName: 'images',
     modelName: 'Image',
   });
   return Image;
