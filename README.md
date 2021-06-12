@@ -3,17 +3,20 @@
 ![contributors](https://img.shields.io/github/contributors/AugustoLL/ecomerce-sequelize)
 ![node-version](https://img.shields.io/badge/Node->=12.0.0-brightgreen)
 ![npm-version](https://img.shields.io/badge/npm->=6.14.0-brightgreen)
+![sequelize-version](https://img.shields.io/badge/sequelize-%3E%3D6.6.2-blue)
+![dotenv-version](https://img.shields.io/badge/dotenv-%3E%3D10.0.0-blue)
+![mysql2-version](https://img.shields.io/badge/mysql2-%3E%3D2.2.5-red)
 
 ## Project setup
 ```
 npm install
 ```
-## Comandos de Sequalize
-Luego de cada comando que se menciona a continuación se debe ejecutar el siguiente comando:
+## Sequelize Commands
+The following command should be utilized after using any of the commands shown in the next section:
 ```
 npx sequelize db:migrate
 ```
-### Lista de comandos
+### List of commands
 ```
 sequelize model:generate --name Brand --attributes name:string
 ```
