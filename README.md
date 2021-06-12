@@ -54,7 +54,7 @@ sequelize model:generate --name Image --attributes name:string,url:string,descri
 sequelize model:generate --name Shipping --attributes street:string,number:integer,delivered_date:date
 ```
 ```
-sequelize model:generate --name Order --attributes number:integer,date:date,total:decimal,payments_id:integer,users_addresses:integer,states_id:integer
+sequelize model:generate --name Order --attributes number:integer,date:date,total:decimal,users_addresses:integer
 ```
 ```
 sequelize model:generate --name OrderDetails --attributes quantity:decimal,subtotal:decimal
